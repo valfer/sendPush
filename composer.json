@@ -1,0 +1,11 @@
+{
+    "name": "Tabasoft/sendPush",
+    "require": {
+        "symfony/console": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tabasoft\\": "src/Tabasoft"
+        }
+    }
+}
