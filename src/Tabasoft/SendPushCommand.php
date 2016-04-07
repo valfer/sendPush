@@ -39,6 +39,13 @@ class SendPushCommand extends Command
                 "the app bundle id",
                 'it.tabasoft.samplepush2'
             )
+            ->addOption(
+                'cert',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                "the APNS certificate",
+                '/Users/valfer/Sites/sendPush/development.pem'
+            )
         ;
     }
 
@@ -52,11 +59,11 @@ class SendPushCommand extends Command
             throw new \Exception("il parametro 'to' è obbligatorio");
 
         $messageJson = "{\"aps\":{\"alert\":\"{$message}\",\"sound\":\"default\"}}";
-        $appleCert = '/Users/valfer/Sites/sendPush/development.pem';
+        $cert = $input->getOption('cert');
         $mode = $input->getOption('mode');
         $app_bundle_id = $input->getOption('app');
 
-        $sendPush = new SendPush($appleCert, $messageJson, $token, $mode, $app_bundle_id);
+        $sendPush = new SendPush($cert, $messageJson, $token, $mode, $app_bundle_id);
 
         $sendPush->openConnection();
         $result = $sendPush->sendPush();

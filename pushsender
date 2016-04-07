@@ -5,8 +5,8 @@
 /*
  * possibili comandi
  *
- *  ./pushsender list
- *  ./pushsender help send
+ *  pushsender list
+ *  pushsender help send
  *
  */
 
@@ -17,4 +17,7 @@ use Symfony\Component\Console\Application;
 
 $application = new Application();
 $application->add(new SendPushCommand());
+
+// ... here we could add other commands
+
 $application->run();
