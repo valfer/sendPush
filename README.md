@@ -1,3 +1,1 @@
-# sendPush
-Source code of post  http://coding.tabasoft.it/php/a-php-command-li…sh-notifications/
-
+see http://coding.tabasoft.it/ios/a-php-command-line-to-send-push-notifications/
