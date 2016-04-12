@@ -2,12 +2,6 @@
 
 namespace Tabasoft;
 
-/**
- * Created by PhpStorm.
- * User: valfer
- * Date: 07/04/16
- * Time: 17:55
- */
 class SendPush
 {
     private $apple_cert;
@@ -20,9 +14,8 @@ class SendPush
      * @param $apple_cert       the path to the certificate
      * @param $message          the payload to send (JSON)
      * @param $token            the token of the device
-     * @param $http2_server     the Apple server url
+     * @param $mode             development/production
      * @param $app_bundle_id    the app bundle id
-     * @return mixed            the status code (see https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/APNsProviderAPI.html#//apple_ref/doc/uid/TP40008194-CH101-SW18)
      */
     public function __construct($apple_cert, $message, $token, $mode="development", $app_bundle_id) {
 
